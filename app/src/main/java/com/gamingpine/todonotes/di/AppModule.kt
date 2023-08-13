@@ -5,6 +5,7 @@ import androidx.room.Room
 import com.gamingpine.todonotes.data.datasource.NoteDatabase
 import com.gamingpine.todonotes.data.repository.NoteRepositoryImp
 import com.gamingpine.todonotes.domain.repository.NoteRepository
+import com.gamingpine.todonotes.domain.usecase.AddNoteUseCase
 import com.gamingpine.todonotes.domain.usecase.DeleteNoteUseCase
 import com.gamingpine.todonotes.domain.usecase.GetAllNotesUseCase
 import com.gamingpine.todonotes.domain.usecase.NoteUseCases
@@ -45,7 +46,8 @@ object AppModule {
     fun provideNoteUseCaseWrapper(noteRepository: NoteRepository): NoteUseCases {
         return NoteUseCases(
             GetAllNotesUseCase(noteRepository),
-            DeleteNoteUseCase(noteRepository)
+            DeleteNoteUseCase(noteRepository),
+            AddNoteUseCase(noteRepository)
         )
     }
 }
