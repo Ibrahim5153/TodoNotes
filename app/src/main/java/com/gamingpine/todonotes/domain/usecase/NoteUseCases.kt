@@ -2,5 +2,6 @@ package com.gamingpine.todonotes.domain.usecase
 
 data class NoteUseCases(
     val getAllNotesUseCase: GetAllNotesUseCase,
-    val deleteNoteUseCase: DeleteNoteUseCase
+    val deleteNoteUseCase: DeleteNoteUseCase,
+    val addNoteUseCase: AddNoteUseCase
 )
